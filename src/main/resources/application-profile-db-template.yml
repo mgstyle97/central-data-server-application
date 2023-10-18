@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    url: # Database Connection URL
+    driver-class-name: # Database Driver
+    username: # Database Connection Username
+    password: # Database Connection Password
+
+  jpa:
+    database: # Connection Database
+    database-platform: # Connection Database Dialect

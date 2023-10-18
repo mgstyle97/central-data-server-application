@@ -1,0 +1,8 @@
+server:
+  port: # Server Port
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: # Exposure Endpoints

@@ -1,0 +1,9 @@
+spring:
+  profiles:
+    group:
+      prod:
+        - prod-db
+      dev:
+        - dev-db
+      test:
+        - test-db

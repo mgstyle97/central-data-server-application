@@ -1,0 +1,46 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.1.4'
+    id 'io.spring.dependency-management' version '1.1.3'
+}
+
+group = 'io.migni'
+version = '0.0.1-SNAPSHOT'
+
+java {
+    sourceCompatibility = '17'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Web
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+
+    // Data
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    runtimeOnly 'com.h2database:h2'
+    runtimeOnly 'org.postgresql:postgresql'
+
+    // Health
+    implementation "org.springframework.boot:spring-boot-starter-actuator"
+    runtimeOnly "io.micrometer:micrometer-registry-prometheus"
+
+    // Test
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation "io.github.autoparams:autoparams:3.0.0"
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
+
+task copySettingFiles(type: Copy) {
+    copy {
+        from './config'
+        include '*.yml'
+        into './src/main/resources'
+    }
+}
