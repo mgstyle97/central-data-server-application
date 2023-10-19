@@ -28,7 +28,7 @@ public class GlobalExceptionHandler {
         this.logger.error("[Error] Sequence - {}", requestSequence);
         em.createNativeQuery("INSERT INTO error_log(request_sequence, message) VALUES (?, ?)")
             .setParameter(1, requestSequence)
-            .setParameter(2, exception.getMessage())
+            .setParameter(2, exception.getClass().getName())
             .executeUpdate();
 
         return ResponseEntity
