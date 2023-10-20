@@ -1,8 +1,8 @@
-package io.migni.central.data.server.application.welding;
+package io.migni.central.data.server.application.domain.welding.persistence;
 
 import autoparams.AutoSource;
-import io.migni.central.data.server.application.domain.welding.WeldingData;
-import io.migni.central.data.server.application.domain.welding.WeldingDataRepository;
+import io.migni.central.data.server.application.domain.welding.persistence.WeldingData;
+import io.migni.central.data.server.application.domain.welding.persistence.WeldingDataRepository;
 import org.assertj.core.api.SoftAssertions;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.springframework.beans.factory.annotation.Autowired;
