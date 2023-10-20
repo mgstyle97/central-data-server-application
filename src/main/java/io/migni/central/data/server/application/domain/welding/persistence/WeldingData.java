@@ -1,4 +1,4 @@
-package io.migni.central.data.server.application.domain.welding;
+package io.migni.central.data.server.application.domain.welding.persistence;
 
 import jakarta.persistence.*;
 
@@ -65,6 +65,62 @@ public class WeldingData {
 
     public UUID id() {
         return this.id;
+    }
+
+    public Long requestSequence() {
+        return this.requestSequence;
+    }
+
+    public String machineName() {
+        return this.machineName;
+    }
+
+    public String itemNo() {
+        return this.itemNo;
+    }
+
+    public LocalDateTime workingTime() {
+        return this.workingTime;
+    }
+
+    public Double thicknessOne() {
+        return this.thicknessOne;
+    }
+
+    public Double thicknessTwo() {
+        return this.thicknessTwo;
+    }
+
+    public Double weldForce() {
+        return this.weldForce;
+    }
+
+    public Double weldCurrent() {
+        return this.weldCurrent;
+    }
+
+    public Double weldVoltage() {
+        return this.weldVoltage;
+    }
+
+    public Double weldTime() {
+        return this.weldTime;
+    }
+
+    public String scaledWeldForce() {
+        return this.scaledWeldForce;
+    }
+
+    public String scaledWeldCurrent() {
+        return this.scaledWeldCurrent;
+    }
+
+    public String scaledWeldVoltage() {
+        return this.scaledWeldVoltage;
+    }
+
+    public String scaledWeldTime() {
+        return this.scaledWeldTime;
     }
 
 }

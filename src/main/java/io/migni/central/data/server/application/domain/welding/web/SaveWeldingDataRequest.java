@@ -1,4 +1,4 @@
-package io.migni.central.data.server.application.domain.welding;
+package io.migni.central.data.server.application.domain.welding.web;
 
 import java.time.LocalDateTime;
 

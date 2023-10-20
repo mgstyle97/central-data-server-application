@@ -26,6 +26,7 @@ public class GlobalExceptionHandler {
         final Long requestSequence = Long.valueOf(MDC.get("requestSequence"));
 
         this.logger.error("[Error] Sequence - {}", requestSequence);
+        this.logger.error("[Error] Message: {}", exception.getMessage());
         em.createNativeQuery("INSERT INTO error_log(request_sequence, message) VALUES (?, ?)")
             .setParameter(1, requestSequence)
             .setParameter(2, exception.getClass().getName())

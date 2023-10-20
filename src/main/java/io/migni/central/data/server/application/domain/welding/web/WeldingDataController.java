@@ -1,9 +1,11 @@
-package io.migni.central.data.server.application.domain.welding;
+package io.migni.central.data.server.application.domain.welding.web;
 
+import io.migni.central.data.server.application.domain.welding.application.WeldingDataService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.UUID;
 
 @RequestMapping("/sensing")
@@ -26,6 +28,18 @@ public class WeldingDataController {
         return ResponseEntity
             .status(HttpStatus.CREATED)
             .body(id);
+    }
+
+    @PostMapping("/batch")
+    public ResponseEntity<Integer> saveBulk(
+        @RequestHeader("Global-Request-Sequence") final Long requestSequence,
+        @RequestBody final List<SaveWeldingDataRequest> requestList
+    ) {
+        final int saveCount = this.weldingDataService.saveBulk(requestSequence, requestList);
+
+        return ResponseEntity
+            .status(HttpStatus.CREATED)
+            .body(saveCount);
     }
 
 }
